@@ -54,7 +54,7 @@ resource "akamai_property_activation" "myconfig-prod" {
         activate = false
 }
 
-resource "null_resource" "update_waf" {
+resource "null_resource" "web_application_firewall" {
 
   provisioner "local-exec" {
         command = "akamai appsec clone --version STAGING --config ${var.wafid} --section ${var.security}"
