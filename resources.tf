@@ -63,6 +63,6 @@ resource "null_resource" "web_application_firewall" {
         command = "akamai appsec add-hostname ${var.hostname} --config ${var.wafid} --section ${var.security}"
   }
   provisioner "local-exec" {
-        command = "akamai appsec activate --network STAGING --notify=myemail @akamai.com --config ${var.wafid}  --section ${var.security}"
+        command = "akamai appsec activate --network STAGING --notify=myemail@akamai.com --config ${var.wafid}  --section ${var.security}"
   }
 }
